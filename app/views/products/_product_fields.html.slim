@@ -1,0 +1,17 @@
+-if order.present?
+	tr.product-row
+		td = product.product.name
+		td = product.product.price
+		td = product.quantity
+		=hidden_field_tag "order[line_items_attributes][][id]", product.try(:id), class:"line-item-id"
+		=hidden_field_tag "order[line_items_attributes][][product_id]", product.try(:product_id), class:"line-item-id"
+		=hidden_field_tag "order[line_items_attributes][][quantity]", product.quantity, class:"line-item-id"
+		=hidden_field_tag "order[line_items_attributes][][price]", product.try(:price), class:"line-item-id"
+-else
+	tr.product-row
+		td = product.name
+		td = product.price
+		td = quantity
+		=hidden_field_tag "order[line_items_attributes][][product_id]", product.try(:id), class:"line-item-id"
+		=hidden_field_tag "order[line_items_attributes][][quantity]", quantity, class:"line-item-id"
+		=hidden_field_tag "order[line_items_attributes][][price]", product.try(:price), class:"line-item-id"

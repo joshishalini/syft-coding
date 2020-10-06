@@ -1,0 +1,239 @@
+/* custom font */
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+ 
+/* glyphicons */
+@import url('//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css');
+
+/* font awesome */
+/*@import "font-awesome";*/
+
+
+body{
+ font-family: 'Poiret One', cursive;
+ font-size: 14px!important;
+}
+h1{
+  text-align:center;
+  font-size: 2em;
+  font-color:#27292F;
+}
+
+.font-20{
+  font-size: 20px;
+
+}
+
+blockquote {
+ text-align:center;
+  width: 100%;
+  padding: 5px;
+  font-size: 1.5em;
+  border-left: 2px solid #4a9a8a;
+ background: linear-gradient(90deg, #f9f9f9, hsla(123,99%,93%,9));
+  
+}
+/*p  */
+p{
+  float:right;
+  font-size: 20px;
+}
+
+.fa.fa-leaf{
+  color:#4a9a8a;
+  padding: 10px;
+}
+
+h2{
+  text-align:center;
+  font-size:1.4em;
+}
+
+#rowLine{
+ border-bottom: 1px dashed #4a9a8a;
+width: 100%;
+text-align:center;
+padding: 30px;
+}
+
+
+/* Input= checkbox */ 
+input[type="checkbox"] {
+  display: none;
+}
+
+.custom-check {
+display: inline-block;
+width: 20px; height: 20px;
+border: 2px solid #4a9a8a;	font-family: 'Glyphicons Halflings';
+
+	}
+.custom-check::before {
+  content: "\e013";
+  color: #424242;
+  display: none;
+}
+
+input[type=checkbox]:checked+.custom-check::before {
+  line-height:1.2;
+  display: block;
+  color: #554236;
+}
+
+
+/* List Or Grid View Div */
+.ListOrGrid{
+  width: 20px;
+  border: 1px solid red;
+}
+.icon{
+  margin:10px;
+}
+/* Product section */
+#col{
+   border-bottom: 1px dashed #4a9a8a;
+   border-right: 1px dashed #4a9a8a;
+   text-align:center;
+}
+#col3{
+  border-right:none;
+  border-bottom: 1px dashed #4a9a8a;
+
+}
+h4{
+  float:left;
+}
+.quantity{
+  width: 50px;
+  height:30px;
+  display: inline-block;
+  text-align:center;
+  border: 1px dashed #4a9a8a;
+}
+label{
+   font-family: 'Poiret One', cursive;
+}
+.btn{
+  width:40px;
+  height:29px;
+  margin-top:-5px;
+  border: 1px dashed #4a9a8a;
+  border-radius:0px;
+  background: #ffffff;
+  color: black;
+}
+.glyphicon.glyphicon-shopping-cart{
+  color:#cc3333;
+}
+
+.fa.fa-heart{
+  border: 1px solid #ec4534;
+}
+
+/* cart and payment section */
+
+.fa.fa-paypal{color:#009cde;}
+.fa.fa-credit-card{color:#ff9900;}
+
+#shopping{
+  width: 100%;
+}
+.border-dashed{
+ border: 1px dashed #4a9a8a;
+}
+.centerBlock {
+display: table;
+margin: 0 auto; 
+}
+
+/* Shopping Cart */
+#finalSection{
+  width:100%;
+}
+
+.table{
+  width:60%;
+  margin: 0 auto;
+}
+h3{
+  text-align:center;
+}
+.btn.btn-default{
+  width: 120px;
+  margin:10px;
+  text-align: center;
+}
+.btn.btn-default:hover{
+  background-color:green;
+  color: #ffffff;
+}
+
+.center-block{
+  margin-top:18.8px;
+  width:120px;
+  text-align:center;
+}
+
+#textarea{
+  border:none;
+}
+
+input[type=text].contact{
+ width:150px;
+ border: 1px dashed #4a9a8a;
+}
+
+.textarea{
+  border: 1px dashed #4a9a8a;
+}
+/* footer */
+footer{
+  width: 100%;
+  background: linear-gradient(90deg, #f9f9f9, hsla(123,99%,93%,9));
+  text-align:center;
+ line-height:2;
+
+}
+
+
+input[type=text]{
+  width: 40px;
+  border: none;
+  line-height: 2;
+  margin:4px;
+  border: 1px dashed #4a9a8a;
+}
+.fa.fa-twitter{
+  color: #55acee;
+}
+.fa.fa-facebook{
+  color:#3b5998;
+}
+.fa.fa-product-hunt{
+  color:#da552f;
+}
+/* style for mobiles */
+@media (max-width: 767px) {
+  body{
+    overflow-x:hidden;
+  }
+  #mobile-view{   
+display:inline-block;   
+width:130%;
+margin-left:-30px;
+  }
+
+.custom-check {
+display: inline-block;
+width: 20px; height: 20px;
+border: 1px solid #4a9a8a;	font-family: 'Glyphicons Halflings';
+	}
+  
+  .icon{
+  display:none;
+}
+}
+
+#list{
+  border: 1px solid red;
+text-align:center;
+}

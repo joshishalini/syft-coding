@@ -1,0 +1,58 @@
+.container
+  section.productSection.mt-5
+      #product-container.container-fluid
+        -if @products.present?
+          -@products.each do |product|
+            .row.mt-5
+              .col-sm-12.col-lg-12.col-md-12.col.border-dashed
+                .description.row
+                    h4.col-md-9
+                      =product.name
+                      / | Oolong Green Tea
+                      / img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/450347/teapig.jpeg" /
+                    / p Bla bla bla bla bla blab lab la bla bla bla bla bla blab la
+                    / | <div class="col-sm-2 col-lg-2 col-md-2"
+                    h4.col-md-3 = product.price
+                .row.mt-4
+                  .col-sm-10.col-lg-10.col-md-10.text-right
+                    label.font-20
+                      | Quantity
+                      input.quantity.ml-2 max="1000" min="0" type="number" value="1" product-id="#{product.id}"
+                       / name="#{product.name}" price="#{product.price}" 
+                    / button.btn.btn-success.add-to-cart type="button" 
+                    a.btn.btn-primary.add-product data-remote="true" product-id="#{product.id}"
+                      span.glyphicon.glyphicon-shopping-cart
+                    i.fa.fa-heart-o aria-hidden="true" 
+                    i.fa.fa-circle-thin aria-hidden="true" 
+
+#finalSection.container.mt-5
+  .row
+    .col-md-12
+      h3
+        | My Cart
+        span.glyphicon.glyphicon-shopping-cart
+      =form_for @order do |f|
+        table.table
+          thead
+            tr
+              td Product Name
+              td Price per unit
+              td Quantity
+          tbody.show-cart
+        .centerBlock
+          button.btn.btn-default.check-product type="submit"  Checkout
+        / button.btn.btn-default type="button"  Keep Shopping
+      /! end of center block
+
+javascript:
+  $('.add-product').on('click', function(){
+    var quantity = $(this).closest('div').find('.quantity').val();
+    var productId =  $(this).attr('product-id')
+    $(this).attr('href',"/products/"+productId+"/add_product?quantity="+quantity) // update href to send quantity with params
+  })
+
+  $('.check-product').on('click', function(e){
+    if ($('.product-row').length == 0) {
+      e.preventDefault();
+    }
+  })

@@ -1,0 +1,56 @@
+.container
+  section.productSection.mt-5
+      #product-container.container-fluid
+        -if @order.line_items.present?
+          -@order.line_items.each do |product|
+            .row.mt-5
+              .col-sm-12.col-lg-12.col-md-12.col.border-dashed
+                .description.row
+                  .col-md-3.text-right
+                    label.font-20
+                      | Name
+                      h3
+                        =product.product.name
+                  .col-md-3.text-right
+                    label.font-20
+                      | Price per unit
+                      h3
+                       = product.product.price
+                  .col-md-3.text-right
+                    label.font-20
+                      | Quantity
+                      h3 = product.quantity
+                  .col-md-3.text-right
+                    label.font-20
+                      | Price
+                      h3 #{product.product.price * product.quantity}
+
+#finalSection.container.mt-5
+  .row
+    .col-md-12
+      h3
+        | My Cart
+        span.glyphicon.glyphicon-shopping-cart
+      table.table
+        tbody
+          tr
+            td
+              h5 Cart total
+            td
+              h4 =@order.total_without_discount
+          tr
+            td
+              h5 Discount
+            td
+              h4 =@order.discount_price
+          tr
+            td
+              h5 Final Price
+            td
+              h4 = @order.total
+        /! end of table body
+      /! end of table
+      .centerBlock
+        =link_to "Checkout", order_complete_order_path(@order.id), class: "btn btn-default", method: :put
+        a.btn.btn-default href="#{@order.id}/edit"  Edit Order
+      /! end of center block

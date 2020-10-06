@@ -1,0 +1,1 @@
+$(".show-cart").append('<%= escape_javascript(render :partial => "product_fields", :locals => { :product => @product, :quantity => @quantity, :order => nil}) %>');
